@@ -1,6 +1,6 @@
 # Portfolio Website
 
-This is a personal portfolio website showcasing my skills, experience, and projects. Built with **Vite** for optimal performance and modern web development practices.
+This is a personal portfolio website showcasing my skills, experience, and projects.
 
 ## Features
 
@@ -19,5 +19,10 @@ This is a personal portfolio website showcasing my skills, experience, and proje
 ## How to Run Locally
 
 1. Clone this repository:
-
    git clone https://github.com/Tapu_Parida2004/portfolio.git
+2. Navigate to the project directory:
+   cd your-repo-name
+3. Install dependencies:
+   npm install
+4. Start the development server:
+   npm run dev
