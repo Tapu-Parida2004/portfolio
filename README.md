@@ -12,8 +12,8 @@ This is a personal portfolio website showcasing my skills, experience, and proje
 
 ## Technologies Used
 
-- **Framework**: [Vite](https://vitejs.dev/)
-- **Languages**: React, Tailwind CSS.
+- **Framework**:Tailwind CSS, [Vite](https://vitejs.dev/)
+- **Library**: React,
 - **Deployment**: GitHub Pages, 
 
 ## How to Run Locally
