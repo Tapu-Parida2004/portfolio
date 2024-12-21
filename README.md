@@ -13,8 +13,8 @@ This is a personal portfolio website showcasing my skills, experience, and proje
 ## Technologies Used
 
 - **Framework**: [Vite](https://vitejs.dev/)
-- **Languages**: HTML, CSS, JavaScript (or any additional tech you used)
-- **Deployment**: (Add where it's hosted, e.g., GitHub Pages, Vercel, Netlify, etc.)
+- **Languages**: React, Tailwind CSS.
+- **Deployment**: GitHub Pages, 
 
 ## How to Run Locally
 
