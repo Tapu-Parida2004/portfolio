@@ -31,7 +31,7 @@ npm install
 ### 4. Start the development server:
 npm run dev
 
-### Once the server is running, you can view the portfolio site by opening your browser and navigating to http://localhost:3000.
+
 
 ### Acknowledgements
 Special thanks to Tailwind CSS for providing a utility-first CSS framework that greatly accelerated the styling process.
