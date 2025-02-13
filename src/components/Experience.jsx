@@ -1,25 +1,19 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-
-import { skills } from "../data";
-import { education } from "../data";
+import { skills, education } from "../data";
 
 const Experience = () => {
   const [showAllSkills, setShowAllSkills] = useState(false);
   const [showAllEducation, setShowAllEducation] = useState(false);
   const [filterPercentage, setFilterPercentage] = useState(0);
 
-  // Filter skills based on percentage
   const filteredSkills = skills.filter((skill) => skill.percentage >= filterPercentage);
   const visibleSkills = showAllSkills ? filteredSkills : filteredSkills.slice(0, 6);
-
-  // Control visible education entries
   const visibleEducation = showAllEducation ? education : education.slice(0, 1);
 
   return (
     <div id="experience" className="w-full bg-gray-900 text-white py-20 px-6">
       <div className="max-w-screen-lg mx-auto">
-        {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -30,15 +24,12 @@ const Experience = () => {
             Experience
           </h2>
           <p className="text-gray-400 mt-4">
-            While I am a fresher, my skills and projects speak for my dedication and expertise in web development.
+            While I am a fresher, my skills and projects demonstrate my dedication and expertise in web development.
           </p>
         </motion.div>
 
-        {/* Skills Section */}
         <div className="mt-12">
           <h3 className="text-2xl font-medium text-teal-300 mb-4">Skills</h3>
-
-          {/* Filter Dropdown */}
           <div className="mb-8 flex flex-col sm:flex-row items-center">
             <label className="text-gray-300 text-lg mr-4 mb-2 sm:mb-0" htmlFor="percentageFilter">
               Filter by Percentage:
@@ -56,8 +47,6 @@ const Experience = () => {
               <option value="90">90% and above</option>
             </select>
           </div>
-
-          {/* Skills Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {visibleSkills.map(({ id, name, level, percentage, icon }) => (
               <motion.div
@@ -79,7 +68,6 @@ const Experience = () => {
                     <p className="text-gray-400 text-sm">{level}</p>
                   </div>
                 </div>
-                {/* Progress Bar */}
                 <div className="w-full bg-gray-700 h-2 rounded-full">
                   <div
                     style={{ width: `${percentage}%` }}
@@ -90,8 +78,6 @@ const Experience = () => {
               </motion.div>
             ))}
           </div>
-
-          {/* Skills "See More" Button */}
           <div className="text-center mt-8">
             <button
               onClick={() => setShowAllSkills(!showAllSkills)}
@@ -102,7 +88,6 @@ const Experience = () => {
           </div>
         </div>
 
-        {/* Education Section */}
         <div className="mt-12">
           <h3 className="text-2xl font-medium text-teal-300 mb-4">Education</h3>
           {visibleEducation.map(({ id, degree, state, year, grade, description, institution, completion }) => (
@@ -122,7 +107,6 @@ const Experience = () => {
               <p className="text-gray-300 mt-4">{description}</p>
             </motion.div>
           ))}
-          {/* Education "See More" Button */}
           <div className="text-center mt-8">
             <button
               onClick={() => setShowAllEducation(!showAllEducation)}

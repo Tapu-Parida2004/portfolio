@@ -7,11 +7,7 @@ const ScrollToTop = () => {
   // Show the button when the user scrolls down
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.scrollY > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+      setIsVisible(window.scrollY > 300);
     };
 
     window.addEventListener("scroll", toggleVisibility);
@@ -20,20 +16,18 @@ const ScrollToTop = () => {
 
   // Scroll to the top
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <div className="fixed bottom-5 right-5 z-20">
+    <div className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50">
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="p-3 bg-gray-600 text-white rounded-full shadow-md hover:bg-gray-700 focus:outline-none font-semibold transform transition-all duration-300 hover:scale-110 focus:ring-4 focus:ring-gray-500"
+          className="p-4 md:p-5 bg-gray-700 text-white rounded-full shadow-lg hover:bg-gray-800 focus:outline-none font-semibold transform transition-all duration-300 hover:scale-110 focus:ring-4 focus:ring-gray-500"
+          aria-label="Scroll to top"
         >
-          <FaArrowUp size={20} />
+          <FaArrowUp size={22} />
         </button>
       )}
     </div>

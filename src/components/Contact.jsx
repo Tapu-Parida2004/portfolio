@@ -24,62 +24,43 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validate required fields
     if (!formData.user_name || !formData.user_email || !formData.message) {
       setFormStatus("Please fill all required fields!");
       return;
     }
 
-    // Use EmailJS to send the email
     emailjs
-      .sendForm(
-        "service_okj4mbj",
-        "template_0miv74r",
-        e.target,
-        "An4XwIC9EKOe92M3Y"
-      )
+      .sendForm("service_okj4mbj", "template_0miv74r", e.target, "An4XwIC9EKOe92M3Y")
       .then(
-        (result) => {
-          console.log(result);
+        () => {
           setFormStatus("Message sent successfully!");
-          setFormData({ user_name: "", user_email: "", message: "" }); // Reset form
+          setFormData({ user_name: "", user_email: "", message: "" });
         },
-        (error) => {
-          console.log(error);
-          setFormStatus(
-            "Error: Could not send the message. Please try again."
-          );
+        () => {
+          setFormStatus("Error: Could not send the message. Please try again.");
         }
       );
   };
 
   return (
-    <div
-      id="contact"
-      className="w-full bg-gradient-to-b from-gray-800 to-gray-900 text-white py-20 px-6"
-    >
+    <div id="contact" className="w-full bg-gray-900 text-white py-20 px-6">
       <div className="max-w-screen-lg mx-auto">
-        {/* Header Section */}
         <motion.div
-          initial={{ opacity: 0, y: -50 }}
+          initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h2 className="text-4xl font-semibold border-b-2 border-gray-500 inline-block">
+          <h2 className="text-4xl font-bold border-b-2 border-gray-600 inline-block pb-2">
             Contact Me
           </h2>
-          <p className="text-gray-400 mt-4">
-            I'm available for freelance work or full-time positions. Feel free
-            to reach out to me!
-          </p>
+          <p className="text-gray-400 mt-4">Feel free to reach out for freelance work or job opportunities.</p>
         </motion.div>
 
-        {/* Contact Form */}
         <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
           className="mt-12 flex flex-col items-center"
         >
           <form onSubmit={handleSubmit} className="w-full max-w-lg space-y-6">
@@ -89,11 +70,8 @@ const Contact = () => {
               value={formData.user_name}
               onChange={handleChange}
               placeholder="Your Name"
-              required
-              className="w-full p-3 bg-gray-700 border border-gray-600 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
+              className="w-full p-3 bg-gray-800 border border-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
+              whileFocus={{ scale: 1.02 }}
             />
             <motion.input
               type="email"
@@ -101,40 +79,28 @@ const Contact = () => {
               value={formData.user_email}
               onChange={handleChange}
               placeholder="Your Email"
-              required
-              className="w-full p-3 bg-gray-700 border border-gray-600 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
+              className="w-full p-3 bg-gray-800 border border-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
+              whileFocus={{ scale: 1.02 }}
             />
             <motion.textarea
               name="message"
               value={formData.message}
               onChange={handleChange}
               placeholder="Your Message"
-              required
               rows="4"
-              className="w-full p-3 bg-gray-700 border border-gray-600 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.4, duration: 0.5 }}
+              className="w-full p-3 bg-gray-800 border border-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
+              whileFocus={{ scale: 1.02 }}
             ></motion.textarea>
             <motion.button
               type="submit"
-              className="w-full py-3 bg-gray-600 text-white rounded-md hover:scale-105 duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500"
+              className="w-full py-3 bg-gray-700 text-white rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               Send Message
             </motion.button>
             {formStatus && (
-              <p
-                className={`text-center mt-4 ${
-                  formStatus.includes("successfully")
-                    ? "text-green-500"
-                    : "text-red-500"
-                }`}
-              >
+              <p className={`text-center mt-4 ${formStatus.includes("successfully") ? "text-green-500" : "text-red-500"}`}>
                 {formStatus}
               </p>
             )}
