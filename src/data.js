@@ -1,12 +1,16 @@
 import html from "./assets/icons/html.png";
 import css from "./assets/icons/css.png";
 import javascript from "./assets/icons/javascript.jpeg";
+import java from "./assets/icons/java.png";
+import sql from "./assets/icons/sql.png";
+import node from "./assets/icons/node.png";
 import typescript from "./assets/icons/typescript.png";
 import react from "./assets/icons/react.png";
 import redux from "./assets/icons/react-redux.png";
 import native from "./assets/icons/react-native.png";
 import tailwind from "./assets/icons/tailwind.png";
 import git from "./assets/icons/git.png";
+
 
 import courseAppImage from "./assets/img/courseAppImage.jpg";
 import inventoryImage from "./assets/img/inventoryImage.jpg";
@@ -185,34 +189,53 @@ export const skills = [
   },
   {
     id: 4,
+    name: "Java",
+    level: "Expert",
+    percentage: 87,
+    icon: java,
+  },{
+    id: 5,
+    name: "SQL",
+    level: "Expert",
+    percentage: 80,
+    icon: sql,
+  },{
+    id: 6,
+    name: "Node",
+    level: "Intermediate",
+    percentage: 75,
+    icon: node,
+  },
+  {
+    id: 7,
     name: "TypeScript",
     level: "Intermediate",
     percentage: 75,
     icon: typescript,
   },
-  { id: 5, name: "React.js", level: "Expert", percentage: 83, icon: react },
+  { id: 8, name: "React.js", level: "Expert", percentage: 83, icon: react },
   {
-    id: 6,
+    id: 9,
     name: "Redux.js",
     level: "Intermediate",
     percentage: 72,
     icon: redux,
   },
   {
-    id: 7,
+    id: 10,
     name: "React Native",
     level: "Expert",
     percentage: 78,
     icon: native,
   },
   {
-    id: 8,
+    id: 11,
     name: "Tailwind CSS",
     level: "Expert",
     percentage: 83,
     icon: tailwind,
   },
-  { id: 9, name: "Git", level: "Beginner", percentage: 63, icon: git },
+  { id: 12, name: "Git", level: "Beginner", percentage: 63, icon: git },
 ];
 
 export const education = [
@@ -231,9 +254,9 @@ export const education = [
     degree: "Master of Computer Applications (MCA)",
     institution: "Biju Patnaik University of Technology (BPUT)",
     state: "Odisha",
-    year: "2024 - present",
-    completion: "Expected Completion: [Aug, 2026]",
+    year: "2024 - 2026",
+    grade: "8.56 CGPA",
     description:
-      "Continuing my academic journey to further deepen my expertise in software development and advanced programming concepts.",
+      "Completed my Master's degree with a strong academic foundation in software development, object-oriented programming, and modern computing concepts.",
   },
 ];
