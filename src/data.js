@@ -2,7 +2,7 @@ import html from "./assets/icons/html.png";
 import css from "./assets/icons/css.png";
 import javascript from "./assets/icons/javascript.jpeg";
 import java from "./assets/icons/java.png";
-import sql from "./assets/icons/sql.png";
+import sql from "./assets/icons/sql.jpeg";
 import node from "./assets/icons/node.png";
 import typescript from "./assets/icons/typescript.png";
 import react from "./assets/icons/react.png";
